@@ -7,6 +7,7 @@ const userRoute=require("./routes/users")
 const commentRoute=require("./routes/comment")
 const favoriteRoutes = require('./routes/favorite'); 
 const LikeRoute=require("./routes/like")
+const newsRoute=require("./routes/news");
 const cors = require("cors");
 
 app.use(cors());
@@ -23,6 +24,7 @@ app.use("/server/users",userRoute)
 app.use("/server/favorite", favoriteRoutes);
 app.use('/server/comment',commentRoute);
 app.use('/server/like', LikeRoute);
+app.use("/server",newsRoute);
 
 app.listen("5000",()=>{
     console.log("Backend is running")
