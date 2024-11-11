@@ -16,6 +16,7 @@
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    cursor: pointer;
     /* width:200px; */
     text-align: center;
     width: 100%; /* Ensure articles take full width within each grid column */
@@ -23,7 +24,7 @@
 
 .article img {
     width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 5px;
 }
 

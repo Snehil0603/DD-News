@@ -31,7 +31,7 @@ router.post("/favorited", (req, res) => {
 router.post("/addToFavorite", async (req, res) => {
     try {
         // Destructure fields from req.body
-        const { userFrom, newsId, title, description, urlToImage, publishedAt } = req.body;
+        const { userFrom, newsId, title, description, urlToImage, publishedAt, url } = req.body;
         console.log(req.body);
         // Validate that all required fields are provided
         if (!userFrom || !title || !description) {
@@ -46,6 +46,7 @@ router.post("/addToFavorite", async (req, res) => {
             description: req.body.description,
             urlToImage:urlToImage,
             publishedAt:publishedAt,
+            url:url,
         });
 
         // Save the  document

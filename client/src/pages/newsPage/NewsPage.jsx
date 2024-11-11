@@ -4,7 +4,7 @@ import axios from "axios";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import CommentsSection from "../commentSection/CommentsSection";
-import { FaStar, FaThumbsUp, FaShareSquare, FaEye } from "react-icons/fa";
+import { FaStar, FaThumbsUp, FaShareSquare, FaEye, FaBookReader } from "react-icons/fa";
 import "./newsPage.css"
 
 const NewsPage = () => {
@@ -17,9 +17,11 @@ const NewsPage = () => {
 
     const userId = localStorage.getItem("userId");
     const newsId = `${article.title.replace(/\s+/g, '-').toLowerCase()}-${article.publishedAt}`;
+    const navigate = useNavigate();
     
     useEffect(() => {
         if (article) {
+            console.log(article);
             checkFavoriteStatus();
             checkLikeStatus();
             fetchLikesCount();
@@ -52,6 +54,7 @@ const toggleFavorite = () => {
             description: article.description,
             urlToImage: article.urlToImage,
             publishedAt: article.publishedAt,
+            url:article.url,
         })
         .then(() => {
             setIsFavorited(true);
@@ -104,6 +107,11 @@ const toggleFavorite = () => {
             });
     };
 
+    const readMore=()=>{
+        console.log(article.url);
+        window.location.href = article.url;
+    }
+
     const shareArticle = async () => {
         const shareData = {
             title: article.title,
@@ -146,6 +154,10 @@ const toggleFavorite = () => {
                         <div style={{'display':'flex','alignItems':'center'}}>
                         <FaEye onClick={toggleCommentsVisibility} className="icon eye-icon" />
                         <span>{commentsVisible ? "Hide Comments" : "Show Comments"}</span>
+                        </div>
+                        <div style={{'display':'flex','alignItems':'center'}}>
+                        <FaBookReader onClick={readMore} className="icon" />
+                        <span>Read more</span>
                         </div>
                     </div>
                     {commentsVisible && <CommentsSection newsId={newsId} userId={userId} />}

@@ -25,6 +25,10 @@ const FavoriteSchema = new mongoose.Schema({
     publishedAt:{
         type:String,
         required:true,
+    },
+    url:{
+        type:String,
+        required:false,
     }
 }, 
 { timestamps: true }
