@@ -25,7 +25,7 @@ const SearchComponent = () => {
         const endpointParam = endpoint === 'everything' ? 'everything' : 'top-headlines';
       
         try {
-          const response = await fetch(`https://dd-news.onrender.com/api/news?endpoint=${endpointParam}&keyword=${keyword}&category=${category}`);
+          const response = await fetch(`https://dd-news.onrender.com/server/news?endpoint=${endpointParam}&keyword=${keyword}&category=${category}`);
           
           if (!response.ok) {
             throw new Error('Failed to fetch articles');
