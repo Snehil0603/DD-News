@@ -20,15 +20,16 @@ const UserSchema=new mongoose.Schema({
         default:"",
         unique:false
     },
-    // newsChannel :{
-    //     type: String,
-    //     unique:false,
-    //     required:true,
-    // },
-    // location:{
-    //     type: String,      
-    // }
-
+    newsChannel :{
+        type: [String],
+        unique:false,
+        default: []
+    },
+    reported: {
+        type: Number,
+        default: 0,
+        unique: false
+    },
 },
 {timestamps:true}
 );

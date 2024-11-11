@@ -6,30 +6,30 @@
 }
 
 .body {
-	background:#F8B195;
+	/* background:#F8B195; */
 
     /* background-position: 100%;
     background-size: 51%; */
-   
+    overflow: hidden;
 	display: flex;
 	justify-content:center;
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
-	margin: -10px 0 50px;
+	/* margin: -10px 0 50px; */
 }
 
-h1 {
+.h1 {
 	font-weight: bold;
 	margin: 0;
 }
 
-h2 {
+.h2 {
 	text-align: center;
 }
 
-p {
+.p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -37,18 +37,18 @@ p {
 	margin: 20px 0 30px;
 }
 
-span {
+.span {
 	font-size: 12px;
 }
 
-a {
+.a {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
 
-button {
+.button {
 	border-radius: 20px;
 	border: 1px solid #f67280;
 	background-color:#3557CD;
@@ -61,20 +61,20 @@ button {
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.button:focus {
 	outline: none;
 }
 
-button.ghost {
+.button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
 
-form {
+.form {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -85,7 +85,7 @@ form {
 	text-align: center;
 }
 
-input {
+.input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -218,7 +218,7 @@ input {
 
 
 
-footer {
+.footer {
     background-color: #222;
     color: #fff;
     font-size: 14px;
@@ -230,15 +230,15 @@ footer {
     z-index: 999;
 }
 
-footer p {
+.footer p {
     margin: 10px 0;
 }
 
-footer i {
+.footer i {
     color: rgb(241, 27, 123);
 }
 
-footer a {
+.footer a {
     color: #3c97bf;
     text-decoration: none;
 }

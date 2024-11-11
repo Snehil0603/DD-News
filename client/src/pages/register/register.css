@@ -2,12 +2,13 @@
 
 * {
 	box-sizing: border-box;
+	margin:0;
 
 }
 
 .body {
-	background:#F8B195;
-
+	/* background:#F8B195; */
+	overflow: hidden;
     /* background-position: 100%;
     background-size: 51%; */
    
@@ -17,19 +18,19 @@
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
-	margin: -10px 0 50px;
+	/* margin: -10px 0 50px; */
 }
 
-h1 {
+.h1 {
 	font-weight: bold;
 	margin: 0;
 }
 
-h2 {
+.h2 {
 	text-align: center;
 }
 
-p {
+.p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -37,7 +38,7 @@ p {
 	margin: 20px 0 30px;
 }
 
-span {
+.span {
 	font-size: 12px;
 }
 
@@ -214,31 +215,4 @@ input {
 
 .containerNew.right-panel-active .overlay-right {
 	transform: translateX(20%);
-}
-
-
-
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: rgb(241, 27, 123);
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
 }

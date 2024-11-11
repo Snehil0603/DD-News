@@ -71,6 +71,27 @@ router.delete("/:id",async(req,res)=>{
    
 })
 
+// Update user's news channels
+router.patch("/:id/updateChannels", async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const { selectedChannels } = req.body;
+  
+      const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        { newsChannel: selectedChannels },
+        { new: true }
+      );
+  
+      if (updatedUser) {
+        res.status(200).json(updatedUser);
+      } else {
+        res.status(404).json({ message: "User not found" });
+      }
+    } catch (error) {
+      res.status(500).json({ message: "Failed to update channels", error });
+    }
+  });
 
 
 module.exports = router

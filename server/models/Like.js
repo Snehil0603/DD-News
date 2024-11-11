@@ -3,12 +3,17 @@ const mongoose = require('mongoose');
 
 const LikeSchema =new mongoose.Schema({
    userId: {
-       type: Schema.Types.ObjectId,
-       ref: 'User'
+       type: String,
+       ref: 'User',
+       require:true,
+   },
+   newsId: {
+       type: String,
+       required:false,
    },
    commentId: {
-       type: Schema.Types.ObjectId,
-       ref: 'Comment'
+       type: String,
+       required: false,
    },
    
 

@@ -1,0 +1,203 @@
+.news-page {
+    max-width: 1000px;
+    padding: 20px;
+    margin: 50px auto; /* Centering */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    display: grid;
+    gap: 20px;
+}
+
+.article-image {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 350px;
+}
+
+.content-details {
+    flex: 2;
+}
+
+.content-details h2 {
+    font-size: 1.3em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.date,
+.author {
+    margin: 10px 0;
+}
+
+.meta-info {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.content-details p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.content-details a {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #3557CD;
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 30px;
+    color: rgb(155, 154, 154);
+    cursor: pointer;
+    margin: 10px;
+    transition: color 0.3s ease;
+}
+
+.icon.active,
+.icon:hover {
+    color: #3557CD;
+}
+
+.favorite-icon.active,
+.like-icon.active {
+    color: #3557CD;
+}
+
+.all-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.eye-icon-container,
+.like-section {
+    display: inline-flex;
+    align-items: center;
+    color: rgb(155, 154, 154);
+}
+
+/* Comment Section Styles */
+.comments-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.comments-section textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.comments-section button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #3557CD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comments-section button:hover {
+    background-color: #0056b3;
+}
+
+.comments-section .comment {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section .comment p strong {
+    font-weight: bold;
+}
+
+.comments-section .comment button {
+    background-color: transparent;
+    color: #ff4d4d;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.comments-section .comment button:hover {
+    color: #e60000;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .news-page {
+        margin: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .article-image {
+        max-height: 250px;
+    }
+
+    .content-details h2 {
+        font-size: 1.2em;
+    }
+
+    .meta-info,
+    .content-details p {
+        font-size: 0.8em;
+    }
+
+    .icon {
+        font-size: 24px;
+        margin: 5px;
+    }
+
+    .all-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .comments-section {
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    .comments-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .comments-section textarea {
+        height: 80px;
+    }
+
+    .comments-section button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}

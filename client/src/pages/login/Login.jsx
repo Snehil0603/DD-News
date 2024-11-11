@@ -21,7 +21,8 @@ export default function Login() {
         username:userRef.current.value,
         password:passwordRef.current.value,
       })
-      
+      console.log(res.data);
+      localStorage.setItem("userId", res.data._id);
       dispatch({type:"LOGIN_SUCCESS",payload: res.data}) 
       window.location.href='newsSelect'
     
@@ -37,20 +38,20 @@ export default function Login() {
     <div className=".body">
     <div className="form-container sign-in-container">
     
-      <form  className="loginForm"  onSubmit={handleSubmit}>
-      <h1>Sign in</h1>
+      <form  className="loginForm form"  onSubmit={handleSubmit}>
+      <h1 className="h1">Sign in</h1>
         <label >Username</label>
         <input 
         type="text" 
-        className="loginInput" 
+        className="loginInput input" 
         placeholder="Enter your username..."
         ref={userRef}
         ></input>
         <label >Password</label>
         <input type="password"className="loginInput"  placeholder="Enter your password..." ref={passwordRef}></input>
-      <button className="loginButton"  type="submit" disabled={isFetching}>Login</button>
+      <button className="loginButton button"  type="submit" disabled={isFetching}>Login</button>
       </form>
-      <button className="loginRegisterButton">
+      <button className="loginRegisterButton button">
       <Link to="/register" className="link">Register</Link></button>
       
       </div>

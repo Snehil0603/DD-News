@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Grow, Typography } from '@material-ui/core';
+import { Grid, Grow, Typography, makeStyles } from '@material-ui/core';
 
 import NewsCard from './NewsCard/NewsCard';
 import useStyles from './styles.js';
@@ -17,7 +17,7 @@ const NewsCards = ({ articles, activeArticle }) => {
   if (!articles.length) {
     return (
       <Grow in>
-        <Grid className={classes.container} container alignItems="stretch" spacing={3}>
+        <Grid className={classes.container} container alignItems="stretch" spacing={3} style={{ padding: 0, margin: 0 }}>
           {infoCards.map((infoCard) => (
             <Grid item xs={12} sm={6} md={4} lg={3} className={classes.infoCard}>
               <div className={classes.card} style={{ backgroundColor: infoCard.color }}>

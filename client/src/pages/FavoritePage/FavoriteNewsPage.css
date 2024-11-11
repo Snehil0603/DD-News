@@ -1,0 +1,22 @@
+.favorite-news{
+  margin:10px;
+  padding:10px;
+}
+/* Full page layout with sticky footer */
+.favorite-news {
+  min-height: 400px; /* Adjust based on your navbar height */
+  display: flex;
+  flex-direction: column;
+}
+
+.favorite-news .content {
+  flex: 1; /* Allows main content to take up remaining space */
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}

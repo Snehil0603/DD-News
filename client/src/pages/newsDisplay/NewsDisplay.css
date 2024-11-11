@@ -1,0 +1,155 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-bottom:10px
+}
+
+.results {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns for larger screens */
+    gap: 20px; /* Space between items */
+}
+
+.article {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* width:200px; */
+    text-align: center;
+    width: 100%; /* Ensure articles take full width within each grid column */
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.article h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.article p {
+    font-size: 1em;
+    color: #555;
+}
+
+.error {
+    color: red;
+}
+
+/* Add these styles to improve the appearance of the radio button section */
+.endpoint-toggle {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.endpoint-toggle label {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+.menu{
+    width: 150px;
+    margin-right:20px;
+    border: 1px solid #fff;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+  background-color:#3557CD;
+  color:#fff;
+    cursor: pointer;
+    font-family: 'Pangolin', cursive;
+  
+}
+
+.menu:focus,
+.menu:hover{
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+.search{
+  margin:10px;
+  padding:1px;
+    height: 60px;
+  border:solid;
+  border-color:#3557CD;
+    border-radius: 40px;
+    padding: 10px;
+  display:flex;
+  justify-content:space-between;
+}
+
+
+.search:hover{
+  box-shadow: 1px 1px 5px 5px lightblue;
+  
+}
+.search > .search-txt{
+    width: 190px;
+    padding: 0 10px;
+    color: wheat;
+    font-family: 'Pangolin', cursive;
+}
+.selection{
+  display:flex;
+  align-items:center;
+  display: inline-flex;
+}
+.search-btn{
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background:#3557CD ;
+    display: flex;
+    justify-content: center; 
+   align-items: center; 
+ } 
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color:wheat ;
+    font-size: 16px;
+    transition: ease-in 0.4s;
+    line-height: 40px;
+    width: 110px;
+    font-family: 'Pangolin', cursive;
+}
+
+/* Media Query for Small Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns per row on smaller screens */
+    }
+
+    .article {
+        width: 100%; /* Ensure articles take full width within each grid column */
+    }
+
+    .menu{
+        width:20px;
+      }
+}
+
+/* Optional: Media Query for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .results {
+        grid-template-columns: 1fr; /* 1 column per row on very small screens */
+    }
+}
+

@@ -1,0 +1,101 @@
+/* Main container */
+.contact-form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form content styling */
+  .form-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .form-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #0073e6;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.3);
+  }
+  
+  /* Submit button styling */
+  .submit-btn {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-bottom:5px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Image styling */
+  .form-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    height:450px;
+  }
+  
+  .form-image img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Responsive layout for smaller screens */
+  @media (max-width: 768px) {
+    .contact-form-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .form-content {
+      padding-right: 0;
+    }
+  
+    .form-image {
+      padding-left: 0;
+      margin-top: 20px;
+    }
+  }
+  

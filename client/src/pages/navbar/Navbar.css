@@ -1,0 +1,172 @@
+/* General reset and scrollbar styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0056b3;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.navbar-logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.img {
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+
+/* Profile Icon and Dropdown */
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #444;
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+/* Mobile View Styling */
+@media (max-width: 768px) {
+  /* Hide desktop nav-links and show hamburger */
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Mobile Menu */
+  .nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute; /* Changed from fixed to absolute */
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding-top: 10px;
+    align-items: center;
+    z-index: 100;
+    overflow-y: auto; /* Allow scrolling */
+    max-height: calc(100vh - 70px); /* Prevents it from extending past the screen */
+  }
+
+  .nav-links-mobile a {
+    color: #fff;
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    display: block;
+  }
+
+  .nav-links a:hover {
+    background-color: grey;
+  }
+
+  /* Profile Dropdown for Mobile */
+  .profile-dropdown {
+    position: relative;
+  }
+
+  .profile-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* Full width on mobile */
+    background-color: #333;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-dropdown .dropdown-menu a {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .profile-dropdown .dropdown-menu a:hover {
+    background-color: grey; /* Grey on hover */
+  }
+}
+
+

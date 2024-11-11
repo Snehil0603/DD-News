@@ -1,22 +1,32 @@
 const mongoose = require('mongoose');
 
-const FavoriteSchema =new  mongoose.Schema({
+const FavoriteSchema = new mongoose.Schema({
     userFrom: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+        type: String,
+        // ref: 'User',  // Reference to User model, make sure the User model is defined correctly elsewhere
+        required: true
     },
-    newsId : {
-        type: String
+    newsId: {  // Ensure the field matches the key in your routes
+        type: String,
+        required: false,
     },
-    newsTitle: {
-        type: String
+    title: {
+        type: String,
+        required: true
     },
-    newsPost: {
-        type: String
+    description: {
+        type: String,
+        required: true
     },
-    
-
-}, { timestamps: true })
-
-
-module.exports=mongoose.model("Favorite",FavoriteSchema)
+    urlToImage:{
+        type:String,
+        required: false,
+    },
+    publishedAt:{
+        type:String,
+        required:true,
+    }
+}, 
+{ timestamps: true }
+);
+module.exports = mongoose.model("Favorite", FavoriteSchema);

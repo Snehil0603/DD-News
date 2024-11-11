@@ -1,0 +1,15 @@
+.iconss {
+    font-size: 20px; /* Adjust the size as needed */
+    color: rgb(155, 154, 154); /* Default icon color */
+    margin: 0 8px; /* Add some horizontal spacing */
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.iconss:hover {
+    color: #3557CD; /* Color change on hover */
+}
+
+.iconss:active {
+    color: #3557CD; /* Darker color on click */
+}
