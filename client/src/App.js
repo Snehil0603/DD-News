@@ -14,7 +14,7 @@ function App() {
   const { user } = useContext(Context); // Access user state from context
 
   return (
-    <Router>
+    <Router basename="/DD-News">
       <Routes>
         <Route path="/" element={<Register />} />
         <Route path="/register" element={<Register />} />
