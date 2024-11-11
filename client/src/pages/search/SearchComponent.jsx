@@ -25,20 +25,20 @@ const SearchComponent = () => {
         const endpointParam = endpoint === 'everything' ? 'everything' : 'top-headlines';
       
         try {
-          const response = await fetch(`/api/news?endpoint=${endpointParam}&keyword=${keyword}&category=${category}`);
+          const response = await fetch(`https://dd-news.onrender.com/api/news?endpoint=${endpointParam}&keyword=${keyword}&category=${category}`);
+          
           if (!response.ok) {
             throw new Error('Failed to fetch articles');
           }
-          const data = await response.json();
       
-          setArticles(data.articles); // Directly set the filtered articles received from backend
+          const data = await response.json();
+          setArticles(data.articles); // Set the filtered articles received from the backend
         } catch (err) {
           setError(err.message);
         } finally {
           setLoading(false);
         }
-      };
-      
+      };      
     
 
     return (
