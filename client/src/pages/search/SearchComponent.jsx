@@ -21,44 +21,25 @@ const SearchComponent = () => {
     const handleSearch = async () => {
         setLoading(true);
         setError(null);
-        const apiKey = '35541c85ab1f4527b6b2aed6e580c56b';
-        let url;
-
-        if (endpoint === 'everything') {
-            // Use the 'everything' endpoint
-            url = `https://newsapi.org/v2/everything?apiKey=${apiKey}`;
-            url += keyword ? `&q=${keyword}` : `&q=latest`; // Use 'latest' as a default query if no keyword is entered
-        } else {
-            // Use the 'top-headlines' endpoint
-            url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
-            if (category) {
-                url += `&category=${category}`;
-            }
-            if (keyword) {
-                url += `&q=${keyword}`;
-            }
-        }
-
+        
+        const endpointParam = endpoint === 'everything' ? 'everything' : 'top-headlines';
+      
         try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error('Failed to fetch articles');
-            }
-            const data = await response.json();
-            // console.log(data);
-              // Filter articles before setting the state
-              const filteredArticles = data.articles.filter(article => {
-                return article.title !== '[Removed]' && article.description && article.urlToImage; // Filter out articles without title, description, or image
-            });
-            console.log(data.articles);
-            setArticles(filteredArticles);
+          const response = await fetch(`/api/news?endpoint=${endpointParam}&keyword=${keyword}&category=${category}`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch articles');
+          }
+          const data = await response.json();
+      
+          setArticles(data.articles); // Directly set the filtered articles received from backend
         } catch (err) {
-            setError(err.message);
+          setError(err.message);
         } finally {
-            setLoading(false);
+          setLoading(false);
         }
-        console.log(url);
-    };
+      };
+      
+    
 
     return (
         <>
