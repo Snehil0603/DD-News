@@ -17,7 +17,7 @@ export default function LandingPage() {
 
   useEffect(() => {
     alanBtn({
-      key: '85cc0cd2b071d34ea07e06f76aa0d9ab2e956eca572e1d8b807a3e2338fdd0dc/stage',
+      key: process.env.REACT_APP_ALAN_API_KEY,
       onCommand: ({ command, articles, number }) => {
         if (command === 'newHeadlines') {
           setNewsArticles(articles);
