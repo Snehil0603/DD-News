@@ -30,7 +30,7 @@ export default function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post('http://localhost:5000/server/auth/register', {
+      const res = await axios.post('https://dd-news.onrender.com/server/auth/register', {
         username,
         email,
         password,

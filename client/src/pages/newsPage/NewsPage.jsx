@@ -28,7 +28,7 @@ const NewsPage = () => {
     }, [article]);
 
     const checkFavoriteStatus = () => {
-        axios.post("http://localhost:5000/server/favorite/favorited", {
+        axios.post("https://dd-news.onrender.com/server/favorite/favorited", {
             newsId,
             userFrom: userId,
         }).then(response => {
@@ -43,7 +43,7 @@ const NewsPage = () => {
     const toggleFavorite = () => {
         const newFavoriteStatus = !isFavorited;
         if (newFavoriteStatus) {
-            axios.post("http://localhost:5000/server/favorite/addToFavorite", {
+            axios.post("https://dd-news.onrender.com/server/favorite/addToFavorite", {
                 userFrom: userId,
                 newsId,
                 title: article.title,
@@ -60,7 +60,7 @@ const NewsPage = () => {
                 console.error("Error adding to favorites:", error);
             });
         } else {
-            axios.post("http://localhost:5000/server/favorite/removeFromFavorite", {
+            axios.post("https://dd-news.onrender.com/server/favorite/removeFromFavorite", {
                 newsId,
                 userFrom: userId,
             })
@@ -75,7 +75,7 @@ const NewsPage = () => {
     };
 
     const checkLikeStatus = () => {
-        axios.post("http://localhost:5000/server/like/getLikes", { newsId, userId })
+        axios.post("https://dd-news.onrender.com/server/like/getLikes", { newsId, userId })
             .then(response => {
                 if (response.data.success) {
                     setIsLiked(response.data.likes.some(like => like.userId === userId));
@@ -84,7 +84,7 @@ const NewsPage = () => {
     };
 
     const fetchLikesCount = () => {
-        axios.post("http://localhost:5000/server/like/getLikes", { newsId })
+        axios.post("https://dd-news.onrender.com/server/like/getLikes", { newsId })
             .then(response => {
                 if (response.data.success) {
                     setLikes(response.data.likes.length);
@@ -94,7 +94,7 @@ const NewsPage = () => {
 
     const toggleLike = () => {
         const url = isLiked ? "unLike" : "upLike";
-        axios.post(`http://localhost:5000/server/like/${url}`, { newsId, userId })
+        axios.post(`https://dd-news.onrender.com/server/like/${url}`, { newsId, userId })
             .then(() => {
                 setLikes(prev => prev + (isLiked ? -1 : 1));
                 setIsLiked(!isLiked);

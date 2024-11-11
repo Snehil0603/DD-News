@@ -44,7 +44,7 @@ const CommentsSection = ({ newsId, userId }) => {
 
     const fetchComments = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/server/comment/getComments/${newsId}`);
+            const response = await axios.get(`https://dd-news.onrender.com/server/comment/getComments/${newsId}`);
             if (response.data.success) {
                 const commentsWithLikes = await Promise.all(response.data.comments.map(async (comment) => {
                     const commentLikes = await getLikesCount(comment._id, null);
@@ -73,7 +73,7 @@ const CommentsSection = ({ newsId, userId }) => {
         if (replyId && reportedReplies[replyId]) return alert("You have already reported this reply.");
     
         try {
-            await axios.post("http://localhost:5000/server/comment/report", variable);
+            await axios.post("https://dd-news.onrender.com/server/comment/report", variable);
     
             // Update localStorage for reported comments/replies
             if (commentId) {
@@ -96,7 +96,7 @@ const CommentsSection = ({ newsId, userId }) => {
 
     const handleAddComment = () => {
         if (!commentContent.trim()) return alert("Please enter a comment");
-        axios.post("http://localhost:5000/server/comment/createComment", {
+        axios.post("https://dd-news.onrender.com/server/comment/createComment", {
             writer: userId, newsId, content: commentContent,
         }).then(() => {
             setCommentContent("");
@@ -105,13 +105,13 @@ const CommentsSection = ({ newsId, userId }) => {
     };
 
     const handleDeleteReply = (replyId) => {
-        axios.delete(`http://localhost:5000/server/comment/deleteReply/${replyId}`, {
+        axios.delete(`https://dd-news.onrender.com/server/comment/deleteReply/${replyId}`, {
             data: { userId },
         }).then(fetchComments).catch(error => console.error("Error deleting reply:", error));
     };
 
     const handleEditComment = (commentId) => {
-        axios.put(`http://localhost:5000/server/comment/editComment/${commentId}`, {
+        axios.put(`https://dd-news.onrender.com/server/comment/editComment/${commentId}`, {
             content: editedContent, userId
         }).then(() => {
             fetchComments();
@@ -120,13 +120,13 @@ const CommentsSection = ({ newsId, userId }) => {
     };
 
     const handleDeleteComment = (commentId) => {
-        axios.delete(`http://localhost:5000/server/comment/deleteComment/${commentId}`, {
+        axios.delete(`https://dd-news.onrender.com/server/comment/deleteComment/${commentId}`, {
             data: { userId },
         }).then(fetchComments);
     };
 
     const handleReplySubmit = (commentId) => {
-        axios.post("http://localhost:5000/server/comment/addReply", {
+        axios.post("https://dd-news.onrender.com/server/comment/addReply", {
             writer: userId, newsId, content: replyContent, commentId
         }).then(() => {
             setReplyContent("");
@@ -136,7 +136,7 @@ const CommentsSection = ({ newsId, userId }) => {
     };
 
     const handleEditReply = (replyId) => {
-        axios.put(`http://localhost:5000/server/comment/editReply/${replyId}`, {
+        axios.put(`https://dd-news.onrender.com/server/comment/editReply/${replyId}`, {
             content: editedReplyContent, userId
         }).then(() => {
             fetchComments();
@@ -153,7 +153,7 @@ const CommentsSection = ({ newsId, userId }) => {
 
         const endpoint = liked ? "unLike" : "upLike";
         try {
-            await axios.post(`http://localhost:5000/server/like/${endpoint}`, variable);
+            await axios.post(`https://dd-news.onrender.com/server/like/${endpoint}`, variable);
             fetchComments();
         } catch (error) {
             console.error("Error toggling like:", error);
@@ -166,7 +166,7 @@ const CommentsSection = ({ newsId, userId }) => {
         if (replyId) variable.replyId = replyId;
 
         try {
-            const response = await axios.post("http://localhost:5000/server/like/getLikes", variable);
+            const response = await axios.post("https://dd-news.onrender.com/server/like/getLikes", variable);
             return response.data.success ? response.data.likes.length : 0;
         } catch (error) {
             console.error("Error fetching likes:", error);
@@ -180,7 +180,7 @@ const CommentsSection = ({ newsId, userId }) => {
         if (replyId) variable.replyId = replyId;
 
         try {
-            const response = await axios.post("http://localhost:5000/server/like/getLikes", variable);
+            const response = await axios.post("https://dd-news.onrender.com/server/like/getLikes", variable);
             return response.data.success && response.data.likes.some(like => like.userId === userId);
         } catch (error) {
             console.error("Error checking if liked:", error);

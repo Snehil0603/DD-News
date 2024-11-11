@@ -47,7 +47,7 @@ const NewsSelect = () => {
     const userData = { selectedChannels };
 
     try {
-      const response = await fetch(`http://localhost:5000/server/users/${userId}/updateChannels`, {
+      const response = await fetch(`https://dd-news.onrender.com/server/users/${userId}/updateChannels`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

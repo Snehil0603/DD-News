@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault()
     dispatch({type:"LOGIN_START"})
     try{
-      const res=await axios.post("http://localhost:5000/server/auth/login",{
+      const res=await axios.post("https://dd-news.onrender.com/server/auth/login",{
         username:userRef.current.value,
         password:passwordRef.current.value,
       })

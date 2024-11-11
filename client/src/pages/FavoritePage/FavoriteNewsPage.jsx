@@ -21,7 +21,7 @@ const FavoriteNewsPage = () => {
   // Fetch the favorite news from the backend
   const fetchFavorites = async () => {
     try {
-      const response = await fetch("http://localhost:5000/server/favorite/getFavoredNews", {
+      const response = await fetch("https://dd-news.onrender.com/server/favorite/getFavoredNews", {
         method: "POST", // Sending a POST request to fetch the favorites
         headers: {
           "Content-Type": "application/json",
